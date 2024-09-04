@@ -20,4 +20,9 @@ class TodoController extends Controller
 {
     return view('todo.create');
 }
+public function store(equest $request)
+{
+    $content = $request->input('content');
+    dd($content);
+}
 }
