@@ -6,13 +6,16 @@
 SELECT * FROM todos;
 
 ### Todoモデルのallメソッドの返り値は何か
-Illuminate\Database\Eloquent\Model;
+Illuminate\Database\Eloquent\Collectionクラスのインスタンス（設計図と、実際に使用するプログラム）
 
 ### 配列の代わりにCollectionクラスを使用するメリットは
 コードの簡潔さ、柔軟なデータ操作、チェーンメソッドの使用など
+Collectionインスタンスは配列操作に特化したクラス
+ソートや条件をつけたデータ取得などの配列操作を簡単に行うことができるようになる
 
 ### view関数の第1・第2引数の指定と何をしているか
 'todo.index、todos' => $todos
+ここから
 
 ### index.blade.phpの$todos・$todoに代入されているものは何か
 Todo インスタンスが代入されている
@@ -24,6 +27,7 @@ GETやPOSTのデータを配列として取得
 
 ### fillメソッドは何をしているか
 引数に指定した連想配列を一括代入
+画面の入力項目が増減しても常に同じコードで登録処理が実現できるようになり保守性と可読性が向上
 
 ### $fillableは何のために設定しているか
 一括代入には脆弱性があるため$fillableを定義して代入できる項目に制限をかける必要がある
