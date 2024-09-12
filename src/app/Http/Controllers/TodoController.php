@@ -59,4 +59,11 @@ public function __construct(Todo $todo)
 
     }
 
+    public function delete($id)
+{
+    $todo = $this->todo->find($id);
+    $todo->delete();
+    return redirect()->route('todo.index');
+}
+
 }
