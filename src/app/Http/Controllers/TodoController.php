@@ -29,6 +29,7 @@ public function store(TodoRequest $request)
 public function show($id)
 {
     $todo = $this->todo->find($id);
+    
     return view('todo.show', ['todo' => $todo]);
 }
 
@@ -37,6 +38,7 @@ private $todo;
 public function __construct(Todo $todo)
     {
         $this->todo = $todo;
+        
     }
 
     public function edit($id)
